@@ -1423,6 +1423,168 @@ body {
 .portfolio-card:nth-child(7) { animation-delay: 0.7s; }
 .portfolio-card:nth-child(8) { animation-delay: 0.8s; }
 
+/* ================= SERVICES PAGE ================= */
+.services-page {
+    min-height: calc(100vh - 76px);
+    padding: 15px 9% 20px;
+    background:
+        radial-gradient(circle at 5% 8%, rgba(110, 80, 255, .09), transparent 18%),
+        radial-gradient(circle at 95% 12%, rgba(120, 90, 255, .08), transparent 20%),
+        #fafbff;
+}
+
+.services-section {
+    max-width: 1080px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    transition: var(--transition);
+}
+
+.purple-card .service-card-icon {
+    background: linear-gradient(135deg, #f1edff, #ebe7ff);
+    color: var(--purple);
+}
+
+.blue-card .service-card-icon {
+    background: linear-gradient(135deg, #eef5ff, #e9efff);
+    color: var(--blue);
+}
+
+.green-card .service-card-icon {
+    background: linear-gradient(135deg, #edfaf3, #e6f8ee);
+    color: var(--green);
+}
+
+.orange-card .service-card-icon {
+    background: linear-gradient(135deg, #fff5e9, #fff0df);
+    color: var(--orange);
+}
+
+.service-card:hover .service-card-icon {
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--purple);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.service-link:hover {
+    gap: 10px;
+    color: var(--primary);
+}
+
+.service-link span {
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* ================= SERVICES RESPONSIVE ================= */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ================= SERVICES ANIMATIONS ================= */
+.service-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+
 /* ================= UTILITIES ================= */
 .text-gradient {
     background: linear-gradient(135deg, var(--purple), var(--orange));
